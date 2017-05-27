@@ -1,0 +1,40 @@
+<app-loading [condition]="isLoading"></app-loading>
+
+<app-toast [message]="toast.message"></app-toast>
+
+
+<div class="card" *ngIf="!isEditing">
+  <h4 class="card-header">Add new User</h4>
+  <div class="card-block">
+    <form [formGroup]="addUserForm" #form="ngForm" (ngSubmit)="addBloodUser()" style="text-align:center">
+      <div class="form-group">
+        <input class="form-control" type="text" formControlName="name" placeholder="Your Name">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" formControlName="group" placeholder=" Blood group">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" formControlName="phone" placeholder="phone Number">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" formControlName="pincode" placeholder="pincode">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" formControlName="country" placeholder="country">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" formControlName="state" placeholder="state">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" formControlName="city" placeholder="city">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" formControlName="village" placeholder="village">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" formControlName="email" placeholder="email">
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!addUserForm.valid"><i class="fa fa-floppy-o"></i>Submit</button>
+    </form>
+  </div>
+</div>
